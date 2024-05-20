@@ -1,6 +1,7 @@
 -- CreateTable
 CREATE TABLE "Product" (
     "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
     "priceInCents" INTEGER NOT NULL,
     "filePath" TEXT NOT NULL,
     "imagePath" TEXT NOT NULL,
@@ -31,12 +32,12 @@ CREATE TABLE "Order" (
 );
 
 -- CreateTable
-CREATE TABLE "DownliadVerification" (
+CREATE TABLE "DownloadVerification" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "expiresAt" DATETIME NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "productId" TEXT NOT NULL,
-    CONSTRAINT "DownliadVerification_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT "DownloadVerification_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateIndex
