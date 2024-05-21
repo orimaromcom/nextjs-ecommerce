@@ -12,6 +12,10 @@ datasource db {
 
 model Product {
   id                     String                 @id @default(uuid())
+<<<<<<< HEAD
+=======
+  name                   String
+>>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
   priceInCents           Int
   filePath               String
   imagePath              String
@@ -20,7 +24,11 @@ model Product {
   createdAt              DateTime               @default(now())
   updatedAt              DateTime               @updatedAt
   orders                 Order[]
+<<<<<<< HEAD
   downloadVerifications  DownliadVerification[]
+=======
+  downloadVerifications  DownloadVerification[]
+>>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
 }
 
 model User {
@@ -28,7 +36,11 @@ model User {
   email     String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+<<<<<<< HEAD
   Order     Order[]
+=======
+  orders    Order[]
+>>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
 }
 
 model Order {
@@ -43,7 +55,11 @@ model Order {
   product   Product @relation(fields: [productId], references: [id], onDelete: Restrict)
 }
 
+<<<<<<< HEAD
 model DownliadVerification {
+=======
+model DownloadVerification {
+>>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
   id        String   @id @default(uuid())
   expiresAt DateTime
   createdAt DateTime @default(now())
