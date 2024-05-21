@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-export default function AdminDashboard() {
-  return <h1>Dashboard</h1>;
-=======
+
 import {
   Card,
   CardContent,
@@ -96,5 +93,5 @@ function DashboardCard({ title, subtitle, body }: DashboardCardProps) {
       </CardContent>
     </Card>
   );
->>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
+
 }
