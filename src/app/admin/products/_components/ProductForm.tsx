@@ -14,7 +14,7 @@ export function ProductForm() {
     <form action={addProduct} className="space-y-8">
       <div className="space-y-2">
         <Label htmlFor="name">Name</Label>
-        <Input type="text" id="name" required></Input>
+        <Input type="text" id="name" name="name" required></Input>
       </div>
       <div className="space-y-2">
         <Label htmlFor="priceInCents">Price In Cents</Label>

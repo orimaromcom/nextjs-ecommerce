@@ -10,11 +10,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.14.0",
-<<<<<<< HEAD
-=======
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
->>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.378.0",
@@ -22,12 +19,8 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
-<<<<<<< HEAD
-    "tailwindcss-animate": "^1.0.7"
-=======
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
->>>>>>> 244b1e5e463b83e668cb25fdb4ae52901c0491d7
   },
   "devDependencies": {
     "@types/node": "^20",
