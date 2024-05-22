@@ -13,6 +13,16 @@ import db from "@/db/db";
 import { formatCurrency } from "./../../../lib/formatters";
 import { formatNumber } from "@/lib/formatters";
 import { MoreVertical } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  ActiveToggleDropdownItem,
+  DeleteDropdownItem,
+} from "./_components/ProductActions";
 
 export default function AdminProductsPage() {
   return (
@@ -74,8 +84,30 @@ async function ProductsTable() {
             <TableCell>{formatCurrency(product.priceInCents / 100)}</TableCell>
             <TableCell>{formatNumber(product._count.orders)}</TableCell>
             <TableCell>
-              <MoreVertical />
-              <span className="sr-only">Actions</span>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <MoreVertical />
+                  <span className="sr-only">Actions</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem asChild>
+                    <a download href={`/admin/products/${product.id}/download`}>
+                      Download
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href={`admin/products/${product.id}/edit`}>Edit</Link>
+                  </DropdownMenuItem>
+                  <ActiveToggleDropdownItem
+                    id={product.id}
+                    isAvailableForPurchase={product.isAvailableForPurchase}
+                  />
+                  <DeleteDropdownItem
+                    id={product.id}
+                    disabled={product._count.orders > 0}
+                  />
+                </DropdownMenuContent>
+              </DropdownMenu>
             </TableCell>
           </TableRow>
         ))}
